@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "bllinearworld",
+  "version": "${version}",
+  "name": "BLlinearWorld",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/bllinearworld/icon.png",
+  "entrypoints": {
+    "fabric-datagen": [
+      "fun.bm.bllinearworld.client.BllinearworldDataGenerator"
+    ],
+    "main": [
+      "fun.bm.bllinearworld.Bllinearworld"
+    ]
+  },
+  "mixins": [
+    "bllinearworld.mixins.json",
+    {
+      "config": "bllinearworld.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
