@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "bllinearworld",
+  "id": "blinearworld",
   "version": "${version}",
-  "name": "BLlinearWorld",
+  "name": "BLinearWorld",
   "description": "",
   "authors": [],
   "contact": {},
-  "license": "MIT",
-  "icon": "assets/bllinearworld/icon.png",
+  "license": "GPLv3",
+  "icon": "assets/blinearworld/icon.png",
   "entrypoints": {
     "fabric-datagen": [
-      "fun.bm.bllinearworld.client.BllinearworldDataGenerator"
+      "fun.bm.blinearworld.client.BlinearWorldDataGenerator"
     ],
     "main": [
-      "fun.bm.bllinearworld.Bllinearworld"
+      "fun.bm.blinearworld.BlinearWorld"
     ]
   },
   "mixins": [
-    "bllinearworld.mixins.json",
+    "blinearworld.mixins.json",
     {
-      "config": "bllinearworld.client.mixins.json",
+      "config": "blinearworld.client.mixins.json",
       "environment": "client"
     }
   ],

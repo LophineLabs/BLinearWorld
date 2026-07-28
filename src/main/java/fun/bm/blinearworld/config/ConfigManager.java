@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.config;
+package fun.bm.blinearworld.config;
 
 import com.google.gson.*;
 import com.mojang.logging.LogUtils;

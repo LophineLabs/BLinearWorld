@@ -14,7 +14,7 @@ loom {
     splitEnvironmentSourceSets()
 
     mods {
-        "bllinearworld" {
+        "blinearworld" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }
@@ -44,9 +44,9 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    implementation("com.github.luben:zstd-jni:${project.zstd_version}")
-    implementation("net.openhft:zero-allocation-hashing:${project.zero_allocation_hashing_version}")
-    implementation("ca.spottedleaf:leafpile:${project.leafpile_version}")
+    include(implementation("com.github.luben:zstd-jni:${project.zstd_version}"))
+    include(implementation("net.openhft:zero-allocation-hashing:${project.zero_allocation_hashing_version}"))
+    include(implementation("ca.spottedleaf:leafpile:${project.leafpile_version}"))
 }
 
 processResources {

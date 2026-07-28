@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.utils;
+package fun.bm.blinearworld.utils;
 
 import net.minecraft.world.level.chunk.storage.RegionStorageInfo;
 

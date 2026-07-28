@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.config;
+package fun.bm.blinearworld.config;
 
 public class RegionFormatConfig {
     @ConfigInfo(name = "compression_level")

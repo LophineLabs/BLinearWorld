@@ -1,9 +1,9 @@
-package fun.bm.bllinearworld.mixin;
+package fun.bm.blinearworld.mixin;
 
 import com.mojang.logging.LogUtils;
-import fun.bm.bllinearworld.data.BLinearHolder;
-import fun.bm.bllinearworld.data.BufferedLinearRegionFileWrapper;
-import fun.bm.bllinearworld.utils.RegionCreatorInfo;
+import fun.bm.blinearworld.data.BLinearHolder;
+import fun.bm.blinearworld.data.BufferedLinearRegionFileWrapper;
+import fun.bm.blinearworld.utils.RegionCreatorInfo;
 import net.minecraft.world.level.chunk.storage.RegionFile;
 import net.minecraft.world.level.chunk.storage.RegionFileStorage;
 import net.minecraft.world.level.chunk.storage.RegionStorageInfo;

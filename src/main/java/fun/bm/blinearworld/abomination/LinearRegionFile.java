@@ -1,9 +1,9 @@
-package fun.bm.bllinearworld.abomination;
+package fun.bm.blinearworld.abomination;
 
 import com.github.luben.zstd.ZstdInputStream;
 import com.github.luben.zstd.ZstdOutputStream;
 import com.mojang.logging.LogUtils;
-import fun.bm.bllinearworld.data.RegionFile;
+import fun.bm.blinearworld.data.RegionFile;
 import net.jpountz.lz4.LZ4Compressor;
 import net.jpountz.lz4.LZ4Factory;
 import net.jpountz.lz4.LZ4FastDecompressor;

@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.data;
+package fun.bm.blinearworld.data;
 
 import ca.spottedleaf.concurrentutil.util.ConcurrentUtil;
 import com.github.luben.zstd.Zstd;
@@ -47,7 +47,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * is never fsynced. Durability comes exclusively from the master file, whose v3
  * on-disk format is unchanged.
  */
-public class BufferedLinearRegionFile implements fun.bm.bllinearworld.data.RegionFile {
+public class BufferedLinearRegionFile implements fun.bm.blinearworld.data.RegionFile {
     private static final double SWAP_FILE_AUTO_COMPACT_PERCENT = 3.0 / 5.0; // 60 %
     private static final long SWAP_FILE_AUTO_COMPACT_SIZE = 1024 * 1024; // 1 MiB
 

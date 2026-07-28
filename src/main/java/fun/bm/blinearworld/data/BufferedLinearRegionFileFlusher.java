@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.data;
+package fun.bm.blinearworld.data;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mojang.logging.LogUtils;

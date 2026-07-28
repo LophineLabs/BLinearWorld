@@ -1,8 +1,8 @@
-package fun.bm.bllinearworld.data;
+package fun.bm.blinearworld.data;
 
 import com.mojang.logging.LogUtils;
-import fun.bm.bllinearworld.config.RegionFormatConfig;
-import fun.bm.bllinearworld.utils.RegionFileFactory;
+import fun.bm.blinearworld.config.RegionFormatConfig;
+import fun.bm.blinearworld.utils.RegionFileFactory;
 
 public class BLinearHolder {
     public static BufferedLinearRegionFileFlusher blinearFlusher = null;

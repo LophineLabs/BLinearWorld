@@ -1,0 +1,73 @@
+name: BlinearWorld CI
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v7
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: zulu
+          java-version: 25
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Read Project Properties
+        id: props
+        run: |
+          mod_version=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2)
+          project_name=$(grep '^archives_base_name=' gradle.properties | cut -d'=' -f2)
+          mc_version=$(grep '^minecraft_version=' gradle.properties | cut -d'=' -f2)
+          short_hash=$(git rev-parse --short HEAD)
+          echo "mod_version=${mod_version}" >> $GITHUB_OUTPUT
+          echo "project_name=${project_name}" >> $GITHUB_OUTPUT
+          echo "mc_version=${mc_version}" >> $GITHUB_OUTPUT
+          echo "short_hash=${short_hash}" >> $GITHUB_OUTPUT
+          echo "tag=${project_name}-${mod_version}-${short_hash}" >> $GITHUB_OUTPUT
+
+      - name: Build Jar
+        run: ./gradlew build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.props.outputs.project_name }}-${{ steps.props.outputs.mod_version }}-${{ steps.props.outputs.short_hash }}
+          path: build/libs/*.jar
+
+      - name: Create Release
+        if: github.event_name != 'pull_request'
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.props.outputs.tag }}
+          name: ${{ steps.props.outputs.project_name }}-${{ steps.props.outputs.mod_version }}-${{ steps.props.outputs.short_hash }}
+          body: |
+            **${{ steps.props.outputs.project_name }}** ${{ steps.props.outputs.mod_version }} for Minecraft ${{ steps.props.outputs.mc_version }}
+
+            Commit: `${{ steps.props.outputs.short_hash }}` | Branch: `${{ github.ref_name }}`
+
+            ### Commit Message
+            ${{ github.event.head_commit.message }}
+          artifacts: build/libs/*.jar
+          generateReleaseNotes: true
+          prerelease: false
+          makeLatest: true
+          token: ${{ secrets.GITHUB_TOKEN }}

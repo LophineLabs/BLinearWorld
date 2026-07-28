@@ -1,9 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "fun.bm.bllinearworld.mixin.client",
+  "package": "fun.bm.blinearworld.mixin",
   "compatibilityLevel": "JAVA_25",
-  "client": [
+  "mixins": [
+    "RegionFileStorageMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.data;
+package fun.bm.blinearworld.data;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.ChunkPos;

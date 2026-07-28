@@ -1,4 +1,4 @@
-package fun.bm.bllinearworld.config;
+package fun.bm.blinearworld.config;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

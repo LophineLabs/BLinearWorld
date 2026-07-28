@@ -1,6 +1,6 @@
-package fun.bm.bllinearworld.utils;
+package fun.bm.blinearworld.utils;
 
-import fun.bm.bllinearworld.data.RegionFile;
+import fun.bm.blinearworld.data.RegionFile;
 
 import java.io.IOException;
 

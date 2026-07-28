@@ -1,7 +1,7 @@
-package fun.bm.bllinearworld.data;
+package fun.bm.blinearworld.data;
 
-import fun.bm.bllinearworld.config.RegionFormatConfig;
-import fun.bm.bllinearworld.utils.RegionCreatorInfo;
+import fun.bm.blinearworld.config.RegionFormatConfig;
+import fun.bm.blinearworld.utils.RegionCreatorInfo;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.storage.RegionFile;
@@ -23,7 +23,7 @@ import java.nio.file.Path;
  * vanilla constructor (which would attempt to open a .mca header on a .b_linear file).
  * All overridden methods delegate directly to the wrapped blinear backend.
  */
-public class BufferedLinearRegionFileWrapper extends RegionFile implements fun.bm.bllinearworld.data.RegionFile {
+public class BufferedLinearRegionFileWrapper extends RegionFile implements fun.bm.blinearworld.data.RegionFile {
 
     private static final sun.misc.Unsafe UNSAFE;
 
