@@ -48,7 +48,7 @@ jobs:
         run: ./gradlew build
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.props.outputs.project_name }}-${{ steps.props.outputs.mod_version }}-${{ steps.props.outputs.short_hash }}
           path: build/libs/*.jar
